@@ -6,36 +6,29 @@
     <title>Greetings</title>
 
     <style>
-
-
-        body{
+        body {
             font-variant-caps: all-petite-caps;
-
-
         }
 
         .widget {
             padding: 5px 5px ;
-            color: #000000;
+            color: #ffffff;
             display: flex;
             justify-content:center;
             align-items:center;
             flex-direction: column;
             max-width: 95%;
             margin: auto;
-            border: 3px solid #000000;
+            border: 3px solid #ffffff;
             border-radius: 5px;
-            box-shadow: 2px 2px 1px 0px #000000;
-
+            box-shadow: 2px 2px 1px 0px #ffffff;
         }
 
-           
         .greet{
             font-size: 3em;
         }
 
         .date {
-      
             font-family: monospace;
             font-size: 2em;
         }
@@ -55,17 +48,9 @@
             display: inline-block;
         }
 
-     
-
-
-
-
     </style>
 </head>
 <body>
-
-
-
 
 <div class="container>">
     <div class="widget">
@@ -81,15 +66,8 @@
                     <div class="time" id="sec"></div>
                 </div>
            
-
-        
-
     </div>
 </div>
-        
-
-
-
 <script>
 
 function dispalyGreetings(today){
@@ -102,22 +80,17 @@ function dispalyGreetings(today){
         else if (hrs >= 17 && hrs <= 24)
             greet = 'Good Evening  '+name;
         document.getElementById('greet').innerHTML = greet;
-
     }
 
     function dispalyDate(today) {  
-       
         const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-        const monthNames = ["January", "February", "March", "April", "May", "June",
-  "July", "August", "September", "October", "November", "December"
-];
+        const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
         var dayName = days[today.getDay()];
         var monthName = monthNames[today.getMonth()];
         var date = today.getDate();
         var year = today.getFullYear();
         document.getElementById('date').innerHTML =dayName+", "+monthName+" "+date+" "+year;
-
     }
 
 
@@ -127,11 +100,10 @@ function dispalyGreetings(today){
         var minutes = padZeros(today.getMinutes());
         var seconds = padZeros(today.getSeconds());
        
-        if(today.getHours() >=12){
-            seconds+=" pm"
-        }
-        else{
-            seconds+=" am"
+        if (today.getHours() >= 12) {
+            seconds += " pm"
+        } else {
+            seconds += " am"
         }
        
         document.getElementById('hour').innerHTML = hour;
@@ -148,6 +120,7 @@ function dispalyGreetings(today){
             return hour
         }
     }
+    
     function padZeros(num) {
         if (num < 10) {
             num = '0' + num
@@ -166,6 +139,5 @@ function dispalyGreetings(today){
     dispalyWidget()
 
 </script>
-
 </body>
 </html>
